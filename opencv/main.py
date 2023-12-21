@@ -9,11 +9,9 @@ class CustomHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if not event.is_directory and event.event_type == 'modified':
             print(f"File {os.path.basename(event.src_path)} has been modified")
-            
-class Main:
-    # fileを常に読み込むコードを書いて、変更があったら、各画像処理を行うようにする。
-    def run(self):
-        pass
+            filename=os.path.basename(event.src_path)
+            #filenameにファイルネーム入ってます
+            #関数書いてく 
 
 
 if __name__ == "__main__":
