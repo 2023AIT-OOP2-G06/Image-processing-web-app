@@ -4,7 +4,6 @@ import time
 import logging
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from watchdog.events import LoggingEventHandler
 
 class CustomHandler(FileSystemEventHandler):
     def on_modified(self, event):
