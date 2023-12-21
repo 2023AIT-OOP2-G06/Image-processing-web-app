@@ -39,7 +39,7 @@ def upload_file():
     # ファイルを保存
     file.save(os.path.join(upload_folder, file.filename))
 
-    return 'File uploaded successfully'
+    return render_template('uploaded_file.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
