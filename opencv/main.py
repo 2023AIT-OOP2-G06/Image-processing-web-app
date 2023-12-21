@@ -2,7 +2,13 @@ import sys
 import time
 import logging
 from watchdog.observers import Observer
-from watchdog.events import LoggingEventHandler
+from watchdog.events import FileSystemEventHandler
+
+class CustomHandler(FileSystemEventHandler):
+    def on_modified(self, event):
+        if not event.is_directory and event.event_type == 'modified':
+            print(f"File {event.src_path} has been modified")
+            
 class Main:
     # fileを常に読み込むコードを書いて、変更があったら、各画像処理を行うようにする。
     def run(self):
